@@ -1,0 +1,149 @@
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*----------------- SECTION 0 -----------------*/
+
+.imagenesInciales{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    height: 400px;
+    width: 100%;
+    border: 1px solid black;
+    margin-top:20px ;
+}
+
+.uno{
+    width: 100%;
+    background-image:url(https://es.web.img3.acsta.net/medias/nmedia/18/69/49/27/20051692.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.dos{
+    width: 100%;
+    background-image:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjua3LqIAORxHUK4jh6zuPcvHDfh2TqdNb_tV28QbXTITRR67QhqtIkxg4MBAcqJaFYK_hAREO158UCIjUy5IqNax6rcZ794FkQYAzGkMBhhVHdAHmdeKUV_TsJQL_iGWb1FIr_ldXF786vqE07b_VinHG5BShs4jYVwWflRNd_2BdNm7dMHfl4hFCPrw/s16000/coleccion-coches-rapidos-y-furiosos-altaya.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.tres{
+    width: 100%;
+    background-image:url(https://resizing.flixster.com/JVoi9khgbpC-h0RlETcVjRYV87I=/1100x618/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7764_i_h10_ad.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cuatro{
+    width: 100%;
+    background-image:url(https://oyster.ignimgs.com/wordpress/stg.ign.com/2016/11/Cars3-p1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/*----------------- SECTION 1 -----------------*/
+
+
+
+.sectionPeliculas{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.Peliculas-recomendadas{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 1500px;
+    justify-content: space-around;
+}
+
+
+.tarjeta{
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;  /*Nota*/
+}
+
+.tarjeta .contenido {
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
+    color: black;
+}
+
+
+.tarjeta:hover{
+    background-image: url(https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/03/Captura-de-pantalla-2017-03-30-a-las-11.59.05.png?fit=2012%2C1006&quality=50&strip=all&ssl=1);
+    background-size: cover;
+    background-position: center;
+    border: 5px solid black;
+    border-radius: 8px;
+    padding: 16px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color:white;
+    color: white;
+}
+
+.img-movie{
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+.movie-title{
+    font-size: 1.2em;
+    margin: 12px 0;
+}
+
+.movie-year, .movie-rating {
+    font-size: 0.9em;
+    
+
+}
+
+/*----------------- SECTION 2 -----------------*/
+
+.sectionPopular{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Peliculas-populares{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 1500px;
+    justify-content: space-around;
+    font-size: 1rem;
+}    
+
+.number{
+    height: 20px;
+    width: 100%;
+    background-color: red;
+    border: 1px solid black;
+    color: black;
+    margin-bottom: 15px ;
+    text-align: center;
+}
