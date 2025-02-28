@@ -16,5 +16,14 @@ module.exports = {
         const movie = await Movie.create({ title, year, director, duration, genre, rate, poster});
         return movie;
     },
+
+    getMoviesByGenre: async (genre) => {
+        try{
+            const movies = await Movie.find({ genre: { $in: [genre] } });
+            return movies;
+        }catch{
+            throw new Error("Error al obtener peliculas");
+        }
+    }
     
 };

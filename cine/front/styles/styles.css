@@ -9,4 +9,13 @@ h2 a{
     color: white;
 }
 
+.text-center{
+    border: 2px solid black;
+    border-radius:7px;
+    padding: 0.5%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
 

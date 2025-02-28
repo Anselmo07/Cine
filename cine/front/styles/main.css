@@ -66,6 +66,7 @@
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
     gap: 20px;
     width: 1500px;
     justify-content: space-around;
@@ -79,7 +80,8 @@
     padding: 16px;
     width: 250px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;  /*Nota*/
+    position: relative;
+    
 }
 
 .tarjeta .contenido {
@@ -103,11 +105,15 @@
     color: white;
 }
 
-.img-movie{
+.img-movie {
     width: 100%;
-    height: auto;
-    border-radius: 8px 8px 0 0;
+    max-width: 400px; 
+    height: 350px; 
+    object-fit: cover; 
+    transition: transform 0.3s ease-in-out;
 }
+
+
 .movie-title{
     font-size: 1.2em;
     margin: 12px 0;
@@ -139,11 +145,41 @@
 }    
 
 .number{
-    height: 20px;
-    width: 100%;
-    background-color: red;
+    height: 25px;
+    width: auto;
+    background-color: rgb(226, 144, 37);
     border: 1px solid black;
     color: black;
-    margin-bottom: 15px ;
+    border-radius: 5px;
+    margin-bottom: 15px;
     text-align: center;
+    align-items: center;
+}
+
+.genre {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.genreDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.movie-card {
+    width: 150px;
+    height: 200px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #333;
 }

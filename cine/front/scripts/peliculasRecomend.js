@@ -1,8 +1,10 @@
-function renderCards(data, container) {
-    // Usamos el contenedor que se pasa como parámetro
-    const movieContainer = container;
 
-    const movieTarjeta = data.map((movie) => {
+const movies = require("./recomendMovies");
+
+function peliculasRecomend() {
+    const movieContainer = document.getElementById("PeliculasRecomendadas");
+    
+    const movieTarjeta = movies.map((movie, index) => {
         const tarjeta = document.createElement('div');
         tarjeta.className = "tarjeta";
 
@@ -19,18 +21,6 @@ function renderCards(data, container) {
         year.className = 'movie-year';
         year.textContent = `Year: ${movie.year}`;
 
-        const director = document.createElement('p');
-        director.className = 'movie-director';
-        director.textContent = `Director: ${movie.director}`;
-
-        const duration = document.createElement('p');
-        duration.className = 'movie-duration';
-        duration.textContent = `Duration: ${movie.duration}`;
-
-        const genre = document.createElement('p');
-        genre.className = 'movie-genre';
-        genre.textContent = `Genre: ${movie.genre}`;
-
         const rating = document.createElement('p');
         rating.className = 'movie-rating';
         rating.textContent = `Rateing: ${movie.rate}`;
@@ -38,15 +28,13 @@ function renderCards(data, container) {
         tarjeta.appendChild(img);
         tarjeta.appendChild(title);
         tarjeta.appendChild(year);
-        tarjeta.appendChild(director);
-        tarjeta.appendChild(duration);
-        tarjeta.appendChild(genre);
         tarjeta.appendChild(rating);
 
         return tarjeta;
     });
 
     movieTarjeta.forEach(tarjeta => movieContainer.appendChild(tarjeta));
+        
 };
 
-module.exports = renderCards;
+module.exports = peliculasRecomend;

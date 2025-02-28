@@ -18,5 +18,21 @@ const createMovies = async (req, res) => {
     res.status(201).json(movie);
 };
 
-module.exports = { testController, createMovies };
+const getMoviesByGenre = async (req, res) => {
+    const { genre } = req.query;
+    
+    if (!genre) {
+        return res.status(400).json({ error: "Debes proporcionar un género" });
+    }
+
+    try {
+        const movies = await movieService.getMoviesByGenre(genre);
+        res.status(200).json(movies);
+    } catch (error) {
+        console.error("Error al obtener películas por género", error);
+        res.status(500).json({ error: error.message });
+    }
+}
+
+module.exports = { testController, createMovies, getMoviesByGenre };
 
