@@ -26,6 +26,7 @@ module.exports = {
     },
 
     plugins: [
-        new Dotenv(),  // Añade el plugin dotenv-webpack
+        new Dotenv({ path: './.env' }),  // Asegúrate de que el archivo .env sea cargado correctamente
     ],
 };
+
