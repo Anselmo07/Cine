@@ -26,7 +26,7 @@ function createMovie() {
             
         if (title && year && director && duration && genre && rate && poster) {
             try {
-                const response = await axios.post('http://localhost:3000/movies', {
+                const response = await axios.post(`${API_URL}/movies`, {
                     title,
                     year,
                     director,

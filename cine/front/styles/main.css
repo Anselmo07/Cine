@@ -69,10 +69,19 @@
     flex-direction: row-reverse;
     gap: 20px;
     width: 1500px;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-
+.Peliculas-todas{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 20px;
+    width: 1500px;
+    
+}
 .tarjeta{
     background-color: white;
     border: 1px solid #ccc;
@@ -130,18 +139,19 @@
 .sectionPopular{
     margin: 20px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
 .Peliculas-populares{
-    margin: 20px;
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 20px; 
     width: 1500px;
-    justify-content: space-around;
     font-size: 1rem;
+    justify-content: space-between;
 }    
 
 .number{
@@ -182,4 +192,74 @@
     justify-content: center;
     text-align: center;
     border: 1px solid #333;
+}
+
+a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+a:visited {
+    color: inherit !important;
+}
+
+a:hover {
+    color: inherit !important;
+}
+
+/* ------------------ RESPONSIVE --------------------  */
+
+@media (max-width: 1366px) {
+    .Peliculas-recomendadas,
+    .Peliculas-todas
+    {
+        width: 90%; /* Reduce el ancho para que las tarjetas no se desborden */
+        justify-content: center;
+    }
+
+    .Peliculas-populares{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tarjeta {
+        width: 200px; /* Reduce el tamaño de las tarjetas */
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+    .imagenesInciales {
+        flex-direction: column;  /* Apila las imágenes en vertical */
+        height: auto;
+    }
+
+    .uno, .dos, .tres, .cuatro {
+        height: 200px; /* Reduce la altura de cada imagen */
+    }
+
+    .tarjeta {
+        width: 100%;  /* Hace que las tarjetas ocupen todo el ancho disponible */
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Peliculas-recomendadas,
+    .Peliculas-todas,
+    .Peliculas-populares {
+        flex-direction: column; /* Apila las tarjetas en una columna */
+        align-items: center;
+    }
+
+    .tarjeta {
+        width: 90%;  /* Ajusta el tamaño de la tarjeta para dispositivos pequeños */
+    }
+}
+
+@media (max-width: 480px) {
+    .tarjeta {
+        width: 100%; /* En móviles ocupa todo el ancho */
+        padding: 10px;
+    }
 }

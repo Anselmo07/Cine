@@ -8,3 +8,20 @@
 .spoty{
     margin-top: 100px;
 }
+
+/* ------------------ RESPONSIVE -------------------- */
+
+
+.bodyAbout {
+    height: auto;
+}
+
+.pMain {
+    margin: 20px;
+}
+
+@media (min-width: 768px) {
+    .pMain {
+        margin: 40px;
+    }
+}

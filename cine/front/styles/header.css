@@ -44,3 +44,22 @@ header{
 .desplegar-content .desplegar-content {
     display: block;
 }
+
+
+/* ------------------ RESPONSIVE -------------------- */
+
+
+header {
+    padding: 10px;
+}
+
+.Contenedor-header {
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .Contenedor-header {
+        flex-direction: row;
+    }
+}
