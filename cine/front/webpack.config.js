@@ -1,4 +1,3 @@
-// webpack.config.js
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
@@ -24,8 +23,9 @@ module.exports = {
         ],
     },
     plugins: [
-        new Dotenv(),
-    ],
+        // Solo incluir el plugin en desarrollo
+        process.env.NODE_ENV !== 'production' && new Dotenv(),
+    ].filter(Boolean),  // Esto elimina el plugin si no está en desarrollo
 };
 
 
