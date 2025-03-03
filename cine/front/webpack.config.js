@@ -3,11 +3,11 @@ const Dotenv = require('dotenv-webpack');  // Importa el plugin dotenv-webpack
 
 module.exports = {
     mode: 'development',
-    entry: "./scripts/index.js", // Ruta de entrada
+    entry: './scripts/index.js',  // Ruta de entrada
 
     output: {
-        path: path.resolve(__dirname, "public"),  // Ruta de salida
-        filename: "bundle.js",  // Nombre del archivo bundle
+        path: path.resolve(__dirname, 'public'),  // Ruta de salida
+        filename: 'bundle.js',  // Nombre del archivo bundle
     },
 
     module: {
@@ -26,7 +26,10 @@ module.exports = {
     },
 
     plugins: [
-        new Dotenv({ path: './.env' }),  // Asegúrate de que el archivo .env sea cargado correctamente
+        new Dotenv({ 
+            path: './.env',  // Asegúrate de que la ruta sea correcta si usas un archivo .env
+            safe: true,     // Si lo necesitas, este valor valida la presencia de las variables
+        }),
     ],
 };
 
