@@ -6,7 +6,9 @@ const cors = require("cors");
 const app = express();
 
 app.use(morgan("dev"));
-app.use(cors());
+app.use(cors({
+    origin:"cine-rho.vercel.app"
+}));
 app.use(express.json());
 
 app.use(router);
