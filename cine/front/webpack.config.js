@@ -1,5 +1,5 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');  // Importa el plugin dotenv-webpack
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: 'development',
@@ -26,10 +26,10 @@ module.exports = {
     },
 
     plugins: [
-        new Dotenv({ 
-            path: './.env',  // Asegúrate de que la ruta sea correcta si usas un archivo .env
-            safe: true,     // Si lo necesitas, este valor valida la presencia de las variables
+        new Dotenv({
+            path: path.resolve(__dirname, '.env'),  // Asegúrate de que esta ruta sea correcta
         }),
     ],
 };
+
 
