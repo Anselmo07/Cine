@@ -8,10 +8,12 @@ const peliculasRecomend = require("./peliculasRecomend");
 
 const cardsContainer = document.querySelector("#movies");
 
+const apiUrl = process.env.VITE_API_URL;
+
 if (cardsContainer) {
     (async function () {
         try {
-            const response = await axios.get(`${API_URL}/movies`);
+            const response = await axios.get(`${apiUrl}/movies`);
             renderCards(response.data, cardsContainer);
             peliculasPopulares();
             peliculasRecomend();

@@ -1,13 +1,13 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');  // Importa el plugin dotenv-webpack
 
 module.exports = {
     mode: 'development',
-    
-    entry: "./scripts/index.js",
+    entry: "./scripts/index.js", // Ruta de entrada
 
     output: {
-        path: __dirname + "/public",
-        filename: "bundle.js",
+        path: path.resolve(__dirname, "public"),  // Ruta de salida
+        filename: "bundle.js",  // Nombre del archivo bundle
     },
 
     module: {
@@ -16,7 +16,7 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader', // Si necesitas transpilar código ES6+
+                    loader: 'babel-loader',  // Si necesitas transpilar tu código
                     options: {
                         presets: ['@babel/preset-env'],
                     },
@@ -24,4 +24,8 @@ module.exports = {
             },
         ],
     },
+
+    plugins: [
+        new Dotenv(),  // Añade el plugin dotenv-webpack
+    ],
 };
