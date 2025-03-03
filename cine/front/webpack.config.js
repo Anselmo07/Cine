@@ -1,22 +1,21 @@
+// webpack.config.js
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: 'development',
-    entry: './scripts/index.js',  // Ruta de entrada
-
+    entry: "./scripts/index.js",
     output: {
-        path: path.resolve(__dirname, 'public'),  // Ruta de salida
-        filename: 'bundle.js',  // Nombre del archivo bundle
+        path: path.resolve(__dirname, "public"),
+        filename: "bundle.js",
     },
-
     module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader',  // Si necesitas transpilar tu código
+                    loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env'],
                     },
@@ -24,10 +23,10 @@ module.exports = {
             },
         ],
     },
-
     plugins: [
         new Dotenv({
-            path: path.resolve(__dirname, '.env'),  // Asegúrate de que esta ruta sea correcta
+            path: './.env', // Solo carga .env en desarrollo
+            safe: true, // Si usas .env.example para proteger variables
         }),
     ],
 };
