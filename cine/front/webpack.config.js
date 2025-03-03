@@ -3,7 +3,7 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: "./scripts/index.js",
     output: {
         path: path.resolve(__dirname, "public"),
@@ -24,10 +24,7 @@ module.exports = {
         ],
     },
     plugins: [
-        new Dotenv({
-            path: './.env', // Solo carga .env en desarrollo
-            safe: true, // Si usas .env.example para proteger variables
-        }),
+        new Dotenv(),
     ],
 };
 
