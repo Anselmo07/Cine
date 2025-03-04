@@ -1,4 +1,10 @@
 {
+    "builds": [
+      {
+        "src": "dist/*",
+        "use": "@vercel/static"
+      }
+    ],
     "cleanUrls": true,
     "routes": [
       { "src": "/HistoriaCine", "dest": "/HistoriaCine.html" },
@@ -6,5 +12,6 @@
       { "src": "/About", "dest": "/About.html" },
       { "src": "/(.*)", "dest": "/index.html" }
     ]
-}
-     
+  }
+  
+    
