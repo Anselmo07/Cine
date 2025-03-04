@@ -1,14 +1,18 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
+const fs = require("fs");
+
+// Buscar todos los archivos HTML en la raíz del proyecto
+const htmlFiles = fs.readdirSync(__dirname).filter(file => file.endsWith(".html"));
 
 module.exports = {
     mode: "production",
     entry: "./scripts/index.js",
     output: {
-        path: path.resolve(__dirname, "dist"), // Genera la carpeta `dist`
+        path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
-        publicPath: "./", // Importante para que Vercel encuentre los archivos
+        publicPath: "./",
     },
     module: {
         rules: [
@@ -25,12 +29,11 @@ module.exports = {
         ],
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: "./index.html",
-            filename: "index.html",
-        }),
-        process.env.NODE_ENV !== "production" && new Dotenv(),
-    ].filter(Boolean),
+        new Dotenv(),
+        ...htmlFiles.map(file => new HtmlWebpackPlugin({
+            template: `./${file}`,
+            filename: file,
+        }))
+    ],
 };
-
 

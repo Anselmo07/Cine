@@ -1,9 +1,12 @@
 {
     "builds": [
-      { "src": "dist/*", "use": "@vercel/static" }
+      { "src": "dist/**/*", "use": "@vercel/static" }
     ],
     "routes": [
+      { "src": "/HistoriaCine", "dest": "/HistoriaCine.html" },
+      { "src": "/formulario", "dest": "/formulario.html" },
+      { "src": "/about", "dest": "/about.html" },
       { "src": "/(.*)", "dest": "/index.html" }
+
     ]
-}
-  
+}   
