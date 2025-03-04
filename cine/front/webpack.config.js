@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const fs = require("fs");
 
 // Buscar todos los archivos HTML en la raíz del proyecto
@@ -9,7 +10,7 @@ module.exports = {
     mode: "production",
     entry: "./scripts/index.js",
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "public"),
         filename: "bundle.js",
     },
     module: {
@@ -31,6 +32,9 @@ module.exports = {
             template: `./${file}`,
             filename: file,  // Genera cada HTML en dist/
         })),
+        new CopyWebpackPlugin({
+            patterns: [{ from: "styles", to: "styles" }] // Copia toda la carpeta styles
+        }),
     ],
 };
 
