@@ -1,14 +1,14 @@
-const path = require('path');
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const Dotenv = require('dotenv-webpack');
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-    mode: 'production',
+    mode: "production",
     entry: "./scripts/index.js",
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "dist"), // Genera la carpeta `dist`
         filename: "bundle.js",
-        publicPath: "./"
+        publicPath: "./", // Importante para que Vercel encuentre los archivos
     },
     module: {
         rules: [
@@ -16,9 +16,9 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: "babel-loader",
                     options: {
-                        presets: ['@babel/preset-env'],
+                        presets: ["@babel/preset-env"],
                     },
                 },
             },
@@ -26,12 +26,11 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./index.html", // Usa tu index.html existente
-            filename: "index.html", // Genera el index.html en public/
+            template: "./index.html",
+            filename: "index.html",
         }),
-        // Solo incluir el plugin en desarrollo
-        process.env.NODE_ENV !== 'production' && new Dotenv(),
-    ].filter(Boolean),  // Esto elimina el plugin si no está en desarrollo
+        process.env.NODE_ENV !== "production" && new Dotenv(),
+    ].filter(Boolean),
 };
 
 
