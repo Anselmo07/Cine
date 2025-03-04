@@ -6,5 +6,5 @@
       { "src": "/About", "dest": "/About.html" },
       { "src": "/(.*)", "dest": "/index.html" }
     ]
-  }
+}
      
