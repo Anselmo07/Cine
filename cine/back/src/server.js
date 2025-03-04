@@ -7,7 +7,7 @@ const app = express();
 
 app.use(morgan("dev"));
 app.use(cors({
-    origin:"cine-rho.vercel.app"
+    origin:"cine-sandy.vercel.app"
 }));
 app.use(express.json());
 

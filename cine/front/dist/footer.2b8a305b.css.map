@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles/footer.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"footer.2b8a305b.css","sourceRoot":"..","sourcesContent":["footer{\r\n    margin: 22px 0 0 0 ;\r\n    padding: 30px;\r\n    background-color: black;\r\n    color: white;\r\n    text-align: center;\r\n    text-decoration: none !important;\r\n}"]}

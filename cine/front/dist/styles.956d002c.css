@@ -1,0 +1,24 @@
+body{
+    background-image: url(https://cloudfront-us-east-1.images.arcpublishing.com/infobae/ZTCBDSR5DVBNJPMMDYTSUKAGPE.jpg);
+    background-size: cover;
+    background-position: center;
+}    
+
+h2 a{
+    text-decoration: none !important;
+    color: white;
+}
+
+.text-center{
+    border: 2px solid black;
+    border-radius:7px;
+    padding: 0.5%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+/*# sourceMappingURL=/styles.956d002c.css.map */
