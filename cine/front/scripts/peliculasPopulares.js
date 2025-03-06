@@ -1,5 +1,5 @@
 
-const tempData = require("./tempData");
+const tempData = require ("./tempData");
 
 function peliculasPopulares() {
     const movieContainer = document.getElementById("Peliculas-populares");
@@ -44,4 +44,4 @@ function peliculasPopulares() {
         
 };
 
-module.exports = peliculasPopulares;
+module.exports = peliculasPopulares

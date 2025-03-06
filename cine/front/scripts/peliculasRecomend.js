@@ -1,5 +1,4 @@
-
-const movies = require("./recomendMovies");
+const movies = require ("./recomendMovies");
 
 function peliculasRecomend() {
     const movieContainer = document.getElementById("PeliculasRecomendadas");

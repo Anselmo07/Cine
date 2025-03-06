@@ -1,4 +1,6 @@
-const axios = require("axios"); // Asegúrate de que axios esté incluido en tu bundle
+const axios = require('axios'); // Asegúrate de que axios esté incluido en tu bundle
+
+const API_URL = "http://localhost:3000"; 
 
 function createMovie() { 
     const titleInput = document.getElementById("title"); 
@@ -11,8 +13,6 @@ function createMovie() {
     const button = document.getElementById("button");
     const buttonBorrar = document.getElementById("buttonBorrar");
     
-    /* --------- Handler --------- */
-
     const handler = async (event) => {  
         event.preventDefault();
 
@@ -38,7 +38,6 @@ function createMovie() {
 
                 if (response.status === 201) {
                     alert('Formulario enviado correctamente.');
-
                 } else {
                     alert('Hubo un problema al enviar el formulario.');
                 }
@@ -50,22 +49,16 @@ function createMovie() {
             alert('Por favor complete todos los campos del formulario.');
         }
     };
-        
+
     const buttonLimpiar = () => {
-        titleInput.value = "";
-        yearInput.value = "";
-        directorInput.value = "";
-        durationInput.value = "";
-        genreInput.value = "";
-        rateInput.value = "";
-        posterInput.value = "";
-        document.getElementById("movieForm").reset();
+        document.getElementById("movieForm").reset(); // Resets the entire form
         alert('Campos borrados correctamente.'); 
     };
-    
+
     button.addEventListener("click", handler);
     buttonBorrar.addEventListener("click", buttonLimpiar);
 };
 
 module.exports = createMovie;
+
 
