@@ -10,8 +10,9 @@ export default {
   mode: 'production',
   entry: './scripts/index.js',
   output: {
-    path: path.resolve(process.cwd(), 'public'),
-    filename: 'bundle.js',
+    // Cambiar para que los archivos se guarden en la carpeta public/dist
+    path: path.resolve(process.cwd(), 'public/dist'),
+    filename: 'bundle.js',  // Esto generará el archivo bundle.js en la carpeta dist
   },
   module: {
     rules: [
@@ -32,20 +33,19 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
-      filename: 'index.html',
-      inject: 'head',
+      template: './index.html',  // Usará el archivo index.html en el directorio raíz
+      filename: 'index.html',    // El archivo generado también se llamará index.html
+      inject: 'head',            // Inyectará el script bundle.js dentro del head
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'styles', to: 'styles' }],
+      patterns: [{ from: 'styles', to: 'styles' }],  // Copiará los estilos a la carpeta dist/styles
     }),
     new webpack.DefinePlugin({
-      "process.env.API_URL": JSON.stringify(process.env.API_URL), // Esto inyecta la variable de entorno API_URL
-    }),    
-
+      "process.env.API_URL": JSON.stringify(process.env.API_URL), // Inyecta la variable de entorno
+    }),
   ],
   externals: {
-    // Aseguramos que axios no sea incluido en el bundle
-    axios: 'axios',
+    axios: 'axios', // Esto asegura que axios no se incluya en el bundle
   },
 };
+
