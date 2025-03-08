@@ -10,9 +10,8 @@ export default {
   mode: 'production',
   entry: './scripts/index.js',
   output: {
-    // Cambiar para que los archivos se guarden en la carpeta public/dist
-    path: path.resolve(process.cwd(), 'public/dist'),
-    filename: 'bundle.js',  // Esto generará el archivo bundle.js en la carpeta dist
+    path: path.resolve(process.cwd(), 'public'),
+    filename: 'bundle.js',
   },
   module: {
     rules: [
