@@ -1,6 +1,6 @@
 // Asegúrate de que `API_URL` esté disponible en el entorno
 // const API_URL = typeof API_URL !== "undefined" ? API_URL : "http://localhost:3000";
-const API_URL = "https://cine-kcer.onrender.com";
+// const API_URL = "https://cine-kcer.onrender.com";
 
 function createMovie() {
     const titleInput = document.getElementById("title");
