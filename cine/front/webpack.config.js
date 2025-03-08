@@ -4,17 +4,13 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import dotenv from 'dotenv';
 
-// Cargar variables del .env
 dotenv.config();
-
-// Verificar si la variable se está cargando
-console.log("📌 API_URL desde Webpack:", process.env.API_URL);
 
 export default {
   mode: 'production',
   entry: './scripts/index.js',
   output: {
-    path: path.resolve(process.cwd(), 'dist'),
+    path: path.resolve(process.cwd(), 'public'),
     filename: 'bundle.js',
   },
   module: {
