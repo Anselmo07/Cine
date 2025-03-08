@@ -1,16 +1,24 @@
 import webpack from 'webpack';
 import path from 'path';
+import fs from 'fs';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import dotenv from 'dotenv';
 
+// Cargar variables de entorno
 dotenv.config();
+
+// Usar path.resolve para obtener la ruta correcta
+const __dirname = path.resolve();  // Esto da la ruta base del proyecto
+
+// Leer los archivos HTML en el directorio
+const htmlFiles = fs.readdirSync(path.resolve(__dirname)).filter(file => file.endsWith('.html'));
 
 export default {
   mode: 'production',
   entry: './scripts/index.js',
   output: {
-    path: path.resolve(process.cwd(), 'public'),
+    path: path.resolve(__dirname, 'public'),  // Cambié a 'public' como en tu configuración original
     filename: 'bundle.js',
   },
   module: {
@@ -31,20 +39,22 @@ export default {
     extensions: ['.js', '.json'],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html',  // Usará el archivo index.html en el directorio raíz
-      filename: 'index.html',    // El archivo generado también se llamará index.html
-      inject: 'head',            // Inyectará el script bundle.js dentro del head
-    }),
+    // Cargar todos los archivos HTML dinámicamente
+    ...htmlFiles.map(file => new HtmlWebpackPlugin({
+      template: `./${file}`,
+      filename: file,
+      inject: 'head',  // Inyectar el bundle.js dentro del head
+    })),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'styles', to: 'styles' }],  // Copiará los estilos a la carpeta dist/styles
+      patterns: [{ from: 'styles', to: 'styles' }],  // Copiará los estilos a la carpeta 'public/styles'
     }),
     new webpack.DefinePlugin({
-      "process.env.API_URL": JSON.stringify(process.env.API_URL), // Inyecta la variable de entorno
+      "process.env.API_URL": JSON.stringify(process.env.API_URL),  // Inyectar la variable de entorno
     }),
   ],
   externals: {
-    axios: 'axios', // Esto asegura que axios no se incluya en el bundle
+    axios: 'axios',  // Evitar incluir axios en el bundle
   },
 };
+
 
