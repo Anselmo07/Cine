@@ -1,19 +1,19 @@
-const axios = require('axios'); // Asegúrate de que axios esté incluido en tu bundle
+// Asegúrate de que `API_URL` esté disponible en el entorno
+// const API_URL = typeof API_URL !== "undefined" ? API_URL : "http://localhost:3000";
+const API_URL = "https://cine-kcer.onrender.com";
 
-const API_URL = "http://localhost:3000"; 
-
-function createMovie() { 
-    const titleInput = document.getElementById("title"); 
-    const yearInput = document.getElementById("year"); 
-    const directorInput = document.getElementById("director"); 
-    const durationInput = document.getElementById("duration"); 
+function createMovie() {
+    const titleInput = document.getElementById("title");
+    const yearInput = document.getElementById("year");
+    const directorInput = document.getElementById("director");
+    const durationInput = document.getElementById("duration");
     const genreInput = document.getElementById("genre");
     const rateInput = document.getElementById("rate");
     const posterInput = document.getElementById("poster");
     const button = document.getElementById("button");
     const buttonBorrar = document.getElementById("buttonBorrar");
-    
-    const handler = async (event) => {  
+
+    const handler = async (event) => {
         event.preventDefault();
 
         const title = titleInput.value;
@@ -23,7 +23,7 @@ function createMovie() {
         const genre = genreInput.value;
         const rate = rateInput.value;
         const poster = posterInput.value;
-            
+
         if (title && year && director && duration && genre && rate && poster) {
             try {
                 const response = await axios.post(`${API_URL}/movies`, {
@@ -52,13 +52,13 @@ function createMovie() {
 
     const buttonLimpiar = () => {
         document.getElementById("movieForm").reset(); // Resets the entire form
-        alert('Campos borrados correctamente.'); 
+        alert('Campos borrados correctamente.');
     };
 
     button.addEventListener("click", handler);
     buttonBorrar.addEventListener("click", buttonLimpiar);
 };
 
-module.exports = createMovie;
+export default createMovie;
 
 

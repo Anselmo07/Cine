@@ -29,4 +29,4 @@ const recomendMovies = [
     },    
 ]
 
-module.exports = recomendMovies; 
+export default recomendMovies; 

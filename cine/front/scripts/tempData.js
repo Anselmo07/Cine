@@ -51,4 +51,4 @@ const tempData = [
   },
 ];
 
-module.exports = tempData; 
+export default tempData; 

@@ -49,4 +49,4 @@ function renderCards(data, container) {
     movieTarjeta.forEach(tarjeta => movieContainer.appendChild(tarjeta));
 };
 
-module.exports = renderCards;
+export default renderCards;

@@ -5,13 +5,10 @@ const cors = require("cors");
 
 const app = express();
 
-const corsOptions = {
-    origin: 'http://127.0.0.1:8080', // Reemplaza con la URL de tu frontend
-    optionsSuccessStatus: 200
-};
-
 app.use(morgan("dev"));
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'cine-sandy.vercel.app' 
+}));
 app.use(express.json());
 
 app.use(router);

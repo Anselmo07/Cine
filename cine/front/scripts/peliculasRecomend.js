@@ -1,4 +1,4 @@
-const movies = require ("./recomendMovies");
+import movies from './recomendMovies.js';
 
 function peliculasRecomend() {
     const movieContainer = document.getElementById("PeliculasRecomendadas");
@@ -36,4 +36,4 @@ function peliculasRecomend() {
         
 };
 
-module.exports = peliculasRecomend;
+export default peliculasRecomend;
