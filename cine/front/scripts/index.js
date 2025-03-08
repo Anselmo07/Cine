@@ -8,7 +8,7 @@ import peliculasRecomend from './peliculasRecomend.js';
 const cardsContainer = document.querySelector("#movies");
 
 
-// const API_URL = "https://cine-kcer.onrender.com";
+const API_URL = "https://cine-kcer.onrender.com";
 
 
 if (cardsContainer) {
